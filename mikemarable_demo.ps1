@@ -44,13 +44,7 @@ Param()
 
 # =============================================================================
 # Features to Demonstrate
-# Key Vault
-#   We can use this to secure the MAK key
-# Cloud Scripts (this script)
-# OOBE
-#   Autopilot Register (registered application)
-#   Time Zone setting (steal from David)
-#   Patching
+
 # Other?
 # =============================================================================
 
@@ -78,6 +72,12 @@ IF ($env:SystemDrive -eq 'X:')
 
 #----------------------------
 # OOBE
+# 1. Autopilot Register (registered application)
+# While that is running?
+# 2. Time Zone setting (steal from David)
+# 3. Remove Universal Apps
+# 4. Patching
+# 5. MAK key (Key Vault)
 # End OOBE
 
 #----------------------------
