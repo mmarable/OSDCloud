@@ -69,11 +69,7 @@ if ($env:SystemDrive -eq 'X:')
     {
         osdcloud-StartWinPE -OSDCloud -KeyVault
         $null = Stop-Transcript
-        IF ($RunType -eq "Demo")
-            {
-                Write-Host "Starting OSDCloud..." -ForegroundColor Green
-
-            }
+        Write-Host "Starting OSDCloud..." -ForegroundColor Green
         Start-OSDCloud -OSVersion 'Windows 10' -OSBuild 21H2 -OSEdition Pro -OSLicense Retail -OSLanguage en-us -SkipAutopilot -SkipODT
     }
 # End WinPE
