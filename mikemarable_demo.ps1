@@ -79,6 +79,11 @@ if ($env:SystemDrive -eq 'X:') {
 }
 # End WinPE
 
+# OOBE
+# End OOBE
+
+# Full OS
+# End Full OS
 
 
 # End of Code
