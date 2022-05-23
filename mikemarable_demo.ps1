@@ -31,12 +31,21 @@ Write-Host "This is a test" -ForegroundColor Green
 .DESCRIPTION
     
 .PARAMETER RunType
-    
+    Run the script as either a demo with comments or production without pauses
+    Possible values are: Demo | Prod    
 .NOTES
 
 .EXAMPLE
 
 #>
+
+Param(
+    [parameter(mandatory=$false)] 
+    [ValidateSet("Demo","Prod")] 
+    [String] $RunType = "Demo"
+
+    )
+
 
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 # Functions
