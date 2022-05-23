@@ -72,7 +72,8 @@ IF ($env:SystemDrive -eq 'X:')
         Write-Host "====================" -ForegroundColor Green
         Write-Host "Starting OSDCloud..." -ForegroundColor Green
         Write-Host "====================" -ForegroundColor Green
-        #Start-OSDCloud -OSVersion 'Windows 10' -OSBuild 21H2 -OSEdition Pro -OSLicense Retail -OSLanguage en-us -SkipAutopilot -SkipODT
+        # Starting OSDCoud will clear the screen?
+        Start-OSDCloud -OSVersion 'Windows 10' -OSBuild 21H2 -OSEdition Pro -OSLicense Retail -OSLanguage en-us -SkipAutopilot -SkipODT
     }
 # End WinPE
 
