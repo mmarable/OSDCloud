@@ -65,7 +65,7 @@ $null = Start-Transcript -Path (Join-Path "$env:SystemRoot\Temp" $Transcript) -E
 
 #----------------------------
 # WinPE
-if ($env:SystemDrive -eq 'X:') 
+IF ($env:SystemDrive -eq 'X:') 
     {
         osdcloud-StartWinPE -OSDCloud -KeyVault
         $null = Stop-Transcript
