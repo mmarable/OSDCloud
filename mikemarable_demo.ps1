@@ -13,8 +13,8 @@ Write-Host "This is a test" -ForegroundColor Green
 
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 # File:    mikemarable_demo.ps1
-# Version: 
-# Date:    
+# Version: 1.0
+# Date:    23-May-2022
 # Author:  Mike Marable
 #
 # 
