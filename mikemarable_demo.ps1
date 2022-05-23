@@ -71,14 +71,12 @@ $null = Start-Transcript -Path (Join-Path "$env:SystemRoot\Temp" $Transcript) -E
 
 #----------------------------
 # WinPE
-if ($env:SystemDrive -eq 'X:') {
-    osdcloud-StartWinPE -OSDCloud -KeyVault
-    #Write-Host -ForegroundColor Cyan "To start a new PowerShell session, type 'start powershell' and press enter"
-    #Write-Host -ForegroundColor Cyan "Start-OSDCloud or Start-OSDCloudGUI can be run in the new PowerShell session"
-    $null = Stop-Transcript
-    #Start-OSDCloud -OSVersion 'Windows 10' -OSBuild 21H2 -OSEdition Enterprise -OSLicense Volume -SkipAutopilot -SkipODT -Restart
-    Start-OSDCloud -OSVersion 'Windows 10' -OSBuild 21H2 -OSEdition Pro -OSLicense Retail -OSLanguage en-us -SkipAutopilot -SkipODT
-}
+if ($env:SystemDrive -eq 'X:') 
+    {
+        osdcloud-StartWinPE -OSDCloud -KeyVault
+        $null = Stop-Transcript
+        Start-OSDCloud -OSVersion 'Windows 10' -OSBuild 21H2 -OSEdition Pro -OSLicense Retail -OSLanguage en-us -SkipAutopilot -SkipODT
+    }
 # End WinPE
 
 #----------------------------
