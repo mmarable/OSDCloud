@@ -60,6 +60,7 @@ Param(
 # Other?
 # =============================================================================
 
+#----------------------------
 # Initialize
 Write-Host -ForegroundColor DarkGray "OSDCloud Demo 22.5.23.1"
 Invoke-Expression -Command (Invoke-RestMethod -Uri functions.osdcloud.com)
@@ -68,6 +69,7 @@ $null = Start-Transcript -Path (Join-Path "$env:SystemRoot\Temp" $Transcript) -E
 # End Initialize
 
 
+#----------------------------
 # WinPE
 if ($env:SystemDrive -eq 'X:') {
     osdcloud-StartWinPE -OSDCloud -KeyVault
@@ -79,9 +81,11 @@ if ($env:SystemDrive -eq 'X:') {
 }
 # End WinPE
 
+#----------------------------
 # OOBE
 # End OOBE
 
+#----------------------------
 # Full OS
 # End Full OS
 
