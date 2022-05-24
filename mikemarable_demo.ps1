@@ -84,6 +84,21 @@ if ($env:UserName -eq 'defaultuser0')
         # 1. Autopilot Register (registered application)
         # Check to see if there is already a profile assigned
         # If not, use the Registered Application to register
+        $TestAutopilotProfile = osdcloud-TestAutopilotProfile
+        IF ($TestAutopilotProfile -eq $true) 
+            {
+                Write-Host "Autopilot profile found!"
+                osdcloud-ShowAutopilotProfile
+            }
+        ELSEIF ($TestAutopilotProfile -eq $false) 
+            {
+                #$AutopilotRegisterCommand = 'Get-WindowsAutopilotInfo -Online -GroupTag Enterprise -Assign'
+                #$AutopilotRegisterProcess = osdcloud-AutopilotRegisterCommand -Command $AutopilotRegisterCommand;Start-Sleep -Seconds 30
+            }
+        ELSE 
+            {
+                Write-Warning 'Unable to determine if device is Autopilot registered'
+            }        
         
 
         Write-Host "---------------------------------" -ForegroundColor White
