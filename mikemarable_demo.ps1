@@ -37,7 +37,7 @@ FUNCTION Add-MAK
     {
         #Invoke-Command {slmgr.vbs /ipk 12345-12345-12345-12345-12345}
 
-        Start-Process 'slmgr.vbs /ipk 12345-12345-12345-12345-12345' | Out-Null
+        Start-Process -FilePath C:\Windows\System32\wscript.exe -ArgumentList 'slmgr.vbs /ipk 12345-12345-12345-12345-12345' | Out-Null
         $ProcessId = (Get-Process -Name 'wscript').Id
         if ($ProcessId) {
             Wait-Process $ProcessId
