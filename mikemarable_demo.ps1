@@ -32,8 +32,12 @@ Param()
 # Functions
 
 #----------------------------
+FUNCTION Add-MAK
 #----------------------------
-
+    {
+        Invoke-Command -ScriptBlock {slmgr.vbs /ipk 12345-12345-12345-12345-12345}
+    }
+    #End Add-MAK
 
 
 # End of Functions
@@ -127,6 +131,7 @@ if ($env:UserName -eq 'defaultuser0')
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "MAK Registration" -ForegroundColor White
         # 5. MAK key (Key Vault)
+        Add-MAK
 
         Write-Host "=================================" -ForegroundColor Green
         Write-Host "Finished OSDCloud - OOBE Phase" -ForegroundColor Green
