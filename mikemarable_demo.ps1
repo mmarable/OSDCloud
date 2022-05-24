@@ -38,7 +38,7 @@ FUNCTION Add-MAK
         [CmdletBinding()]
         param (
             [Parameter()]
-            [Switch]$ProdKey
+            [String]$ProdKey
         )
 
         #Start-Process -FilePath C:\Windows\System32\wscript.exe -ArgumentList 'slmgr.vbs /ipk 12345-12345-12345-12345-12345' | Out-Null
@@ -149,8 +149,7 @@ if ($env:UserName -eq 'defaultuser0')
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "MAK Registration" -ForegroundColor White
         # MAK key (Key Vault)
-        $Secret = Get-AzKeyVaultSecret -VaultName MikeMarable -Name MAKProductKey -AsPlainText
-        Add-MAK -ProdKey "$Secret"
+        Add-MAK -ProdKey "$(Get-AzKeyVaultSecret -VaultName MikeMarable -Name MAKProductKey -AsPlainText)"
 
         Write-Host "=================================" -ForegroundColor Green
         Write-Host "Finished OSDCloud - OOBE Phase" -ForegroundColor Green
