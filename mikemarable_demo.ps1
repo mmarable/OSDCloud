@@ -79,21 +79,21 @@ if ($env:UserName -eq 'defaultuser0')
         Write-Host "Starting OSDCloud - OOBE Phase..." -ForegroundColor Green
         Write-Host "=================================" -ForegroundColor Green
         
-        Write-Host "---------------------------------" -ForegroundColor Gray
-        Write-Host "Autopilot Registration" -ForegroundColor Gray
+        Write-Host "---------------------------------" -ForegroundColor White
+        Write-Host "Autopilot Registration" -ForegroundColor White
         # 1. Autopilot Register (registered application)
         # While that is running?
-        Write-Host "---------------------------------" -ForegroundColor Gray
-        Write-Host "Tinme Zone Configuration" -ForegroundColor Gray
+        Write-Host "---------------------------------" -ForegroundColor White
+        Write-Host "Tinme Zone Configuration" -ForegroundColor White
         # 2. Time Zone setting (steal from David)
-        Write-Host "---------------------------------" -ForegroundColor Gray
-        Write-Host "Remove Universal Apps" -ForegroundColor Gray
+        Write-Host "---------------------------------" -ForegroundColor White
+        Write-Host "Remove Universal Apps" -ForegroundColor White
         # 3. Remove Universal Apps
-        Write-Host "---------------------------------" -ForegroundColor Gray
-        Write-Host "Patching" -ForegroundColor Gray
+        Write-Host "---------------------------------" -ForegroundColor White
+        Write-Host "Patching" -ForegroundColor White
         # 4. Patching
-        Write-Host "---------------------------------" -ForegroundColor Gray
-        Write-Host "MAK Registration" -ForegroundColor Gray
+        Write-Host "---------------------------------" -ForegroundColor White
+        Write-Host "MAK Registration" -ForegroundColor White
         # 5. MAK key (Key Vault)
         Write-Host "=================================" -ForegroundColor Green
         Write-Host "Finished OSDCloud - OOBE Phase" -ForegroundColor Green
