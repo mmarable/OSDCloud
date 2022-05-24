@@ -81,7 +81,8 @@ if ($env:UserName -eq 'defaultuser0')
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Tinme Zone Configuration" -ForegroundColor White
-        osdcloud-StartOOBE -DateTime        
+        #osdcloud-StartOOBE -DateTime
+        osdcloud-SetWindowsDateTime
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Autopilot Registration" -ForegroundColor White
