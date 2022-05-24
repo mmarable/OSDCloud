@@ -83,20 +83,27 @@ if ($env:UserName -eq 'defaultuser0')
         Write-Host "Autopilot Registration" -ForegroundColor White
         # 1. Autopilot Register (registered application)
         # While that is running?
+
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Tinme Zone Configuration" -ForegroundColor White
         # 2. Time Zone setting (steal from David)
+
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Remove Universal Apps" -ForegroundColor White
-        # 3. Remove Universal Apps
         RemoveAppx -Name "XBox","Skype"
-        
+
+        Write-Host "---------------------------------" -ForegroundColor White
+        Write-Host "Install RSAT Components" -ForegroundColor White
+        RSAT Name "ActiveDirectory"
+
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Patching" -ForegroundColor White
         # 4. Patching
+
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "MAK Registration" -ForegroundColor White
         # 5. MAK key (Key Vault)
+
         Write-Host "=================================" -ForegroundColor Green
         Write-Host "Finished OSDCloud - OOBE Phase" -ForegroundColor Green
         Write-Host "=================================" -ForegroundColor Green
