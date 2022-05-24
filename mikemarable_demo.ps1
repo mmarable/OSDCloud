@@ -78,7 +78,11 @@ if ($env:UserName -eq 'defaultuser0')
         Write-Host "=================================" -ForegroundColor Green
         Write-Host "Starting OSDCloud - OOBE Phase..." -ForegroundColor Green
         Write-Host "=================================" -ForegroundColor Green
-        
+
+        Write-Host "---------------------------------" -ForegroundColor White
+        Write-Host "Tinme Zone Configuration" -ForegroundColor White
+        osdcloud-StartOOBE -DateTime        
+
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Autopilot Registration" -ForegroundColor White
         # 1. Autopilot Register (registered application)
@@ -101,11 +105,6 @@ if ($env:UserName -eq 'defaultuser0')
                 Write-Warning 'Unable to determine if device is Autopilot registered'
             }        
         
-
-        Write-Host "---------------------------------" -ForegroundColor White
-        Write-Host "Tinme Zone Configuration" -ForegroundColor White
-        osdcloud-StartOOBE -DateTime
-
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Remove Universal Apps" -ForegroundColor White
         RemoveAppx -Name 'XBox','Skype'
@@ -121,6 +120,7 @@ if ($env:UserName -eq 'defaultuser0')
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Update Windows" -ForegroundColor White
         # Temp disable to save time with testing
+        Write-Host "Disabled for now to save time running" -ForegroundColor Cyan
         ##UpdateWindows
 
         Write-Host "---------------------------------" -ForegroundColor White
