@@ -60,8 +60,6 @@ FUNCTION Add-MAK
 # Initialize
 Write-Host -ForegroundColor DarkGray "OSDCloud Demo 22.5.24.7"
 Invoke-Expression -Command (Invoke-RestMethod -Uri functions.osdcloud.com)
-# Install the Azure KeyVault Module
-osdcloud-InstallModuleKeyVault
 $Transcript = "$((Get-Date).ToString('yyyy-MM-dd-HHmmss'))-OSDCloud-MikeMarable.log"
 $null = Start-Transcript -Path (Join-Path "$env:SystemRoot\Temp" $Transcript) -ErrorAction Ignore
 # End Initialize
@@ -85,6 +83,7 @@ IF ($env:SystemDrive -eq 'X:')
 # OOBE
 if ($env:UserName -eq 'defaultuser0') 
     {
+        osdcloud-StartOOBE -KeyVault
         Write-Host "=================================" -ForegroundColor Green
         Write-Host "Starting OSDCloud - OOBE Phase..." -ForegroundColor Green
         Write-Host "=================================" -ForegroundColor Green
