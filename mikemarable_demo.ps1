@@ -58,7 +58,7 @@ FUNCTION Add-MAK
 
 #----------------------------
 # Initialize
-Write-Host -ForegroundColor DarkGray "OSDCloud Demo 22.5.24.6"
+Write-Host -ForegroundColor DarkGray "OSDCloud Demo 22.5.24.7"
 Invoke-Expression -Command (Invoke-RestMethod -Uri functions.osdcloud.com)
 # Install the Azure KeyVault Module
 osdcloud-InstallModuleKeyVault
