@@ -66,7 +66,7 @@ FUNCTION Add-MAK
 
 #----------------------------
 # Initialize
-Write-Host -ForegroundColor DarkGray "OSDCloud Demo 22.5.24.12"
+Write-Host -ForegroundColor DarkGray "OSDCloud Demo 22.5.24.14"
 Invoke-Expression -Command (Invoke-RestMethod -Uri functions.osdcloud.com)
 $Transcript = "$((Get-Date).ToString('yyyy-MM-dd-HHmmss'))-OSDCloud-MikeMarable.log"
 $null = Start-Transcript -Path (Join-Path "$env:SystemRoot\Temp" $Transcript) -ErrorAction Ignore
