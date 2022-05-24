@@ -86,7 +86,7 @@ if ($env:UserName -eq 'defaultuser0')
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Tinme Zone Configuration" -ForegroundColor White
-        # 2. Time Zone setting (steal from David)
+        osdcloud-StartOOBE -DateTime
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Remove Universal Apps" -ForegroundColor White
