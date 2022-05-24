@@ -91,7 +91,7 @@ IF ($env:SystemDrive -eq 'X:')
 # OOBE
 if ($env:UserName -eq 'defaultuser0') 
     {
-        osdcloud-StartOOBE -KeyVault
+        osdcloud-StartOOBE -KeyVault -Autopilot
         Write-Host "=================================" -ForegroundColor Green
         Write-Host "Starting OSDCloud - OOBE Phase..." -ForegroundColor Green
         Write-Host "=================================" -ForegroundColor Green
