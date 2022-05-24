@@ -73,12 +73,21 @@ IF ($env:SystemDrive -eq 'X:')
 
 #----------------------------
 # OOBE
-# 1. Autopilot Register (registered application)
-# While that is running?
-# 2. Time Zone setting (steal from David)
-# 3. Remove Universal Apps
-# 4. Patching
-# 5. MAK key (Key Vault)
+if ($env:UserName -eq 'defaultuser0') 
+    {
+        Write-Host "=================================" -ForegroundColor Green
+        Write-Host "Starting OSDCloud - OOBE Phase..." -ForegroundColor Green
+        Write-Host "=================================" -ForegroundColor Green
+        # 1. Autopilot Register (registered application)
+        # While that is running?
+        # 2. Time Zone setting (steal from David)
+        # 3. Remove Universal Apps
+        # 4. Patching
+        # 5. MAK key (Key Vault)
+        Write-Host "=================================" -ForegroundColor Green
+        Write-Host "Finished OSDCloud - OOBE Phase" -ForegroundColor Green
+        Write-Host "=================================" -ForegroundColor Green
+    }
 # End OOBE
 
 #----------------------------
