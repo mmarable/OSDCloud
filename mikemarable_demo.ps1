@@ -102,7 +102,7 @@ if ($env:UserName -eq 'defaultuser0')
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Update Windows" -ForegroundColor White
-        UpdateWindows
+        ##UpdateWindows
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "MAK Registration" -ForegroundColor White
