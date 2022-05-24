@@ -149,7 +149,8 @@ if ($env:UserName -eq 'defaultuser0')
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "MAK Registration" -ForegroundColor White
         # MAK key (Key Vault)
-        Add-MAK -ProdKey "$(Get-AzKeyVaultSecret -VaultName MikeMarable -Name MAKProductKey -AsPlainText)"
+        $Secret = Get-AzKeyVaultSecret -VaultName MikeMarable -Name MAKProductKey -AsPlainText
+        Add-MAK -ProdKey "$Secret"
 
         Write-Host "=================================" -ForegroundColor Green
         Write-Host "Finished OSDCloud - OOBE Phase" -ForegroundColor Green
