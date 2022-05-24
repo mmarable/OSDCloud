@@ -92,6 +92,7 @@ if ($env:UserName -eq 'defaultuser0')
             }
         ELSEIF ($TestAutopilotProfile -eq $false) 
             {
+                Write-Host "Autopilot profile was not found.  Need to register!" -ForegroundColor Yellow
                 #$AutopilotRegisterCommand = 'Get-WindowsAutopilotInfo -Online -GroupTag Enterprise -Assign'
                 #$AutopilotRegisterProcess = osdcloud-AutopilotRegisterCommand -Command $AutopilotRegisterCommand;Start-Sleep -Seconds 30
             }
