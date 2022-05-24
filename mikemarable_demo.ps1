@@ -98,7 +98,7 @@ if ($env:UserName -eq 'defaultuser0')
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Authenticate to Azure" -ForegroundColor White
-        Connect-AzAccount
+        Connect-AzAccount | Out-Null
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Time Zone Configuration" -ForegroundColor White
