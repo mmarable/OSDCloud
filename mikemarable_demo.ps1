@@ -102,6 +102,7 @@ if ($env:UserName -eq 'defaultuser0')
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Update Windows" -ForegroundColor White
+        # Temp disable to save time with testing
         ##UpdateWindows
 
         Write-Host "---------------------------------" -ForegroundColor White
