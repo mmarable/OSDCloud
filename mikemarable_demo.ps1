@@ -124,7 +124,8 @@ if ($env:UserName -eq 'defaultuser0')
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Update Drivers" -ForegroundColor White
-        UpdateDrivers
+        Write-Host "Disabled for now to save time running" -ForegroundColor Cyan
+        ##UpdateDrivers
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Update Windows" -ForegroundColor White
