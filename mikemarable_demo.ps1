@@ -94,7 +94,7 @@ if ($env:UserName -eq 'defaultuser0')
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Install RSAT Components" -ForegroundColor White
-        RSAT Name 'ActiveDirectory','GroupPolicy'
+        RSAT -Name 'ActiveDirectory','GroupPolicy'
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Patching" -ForegroundColor White
