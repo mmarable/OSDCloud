@@ -35,7 +35,7 @@ Param()
 FUNCTION Add-MAK
 #----------------------------
     {
-        Invoke-Command -ScriptBlock {slmgr.vbs /ipk 12345-12345-12345-12345-12345}
+        Invoke-Command {slmgr.vbs /ipk 12345-12345-12345-12345-12345}
     }
     #End Add-MAK
 
