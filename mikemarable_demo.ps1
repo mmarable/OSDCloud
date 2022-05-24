@@ -97,8 +97,12 @@ if ($env:UserName -eq 'defaultuser0')
         RSAT -Name 'ActiveDirectory','GroupPolicy'
 
         Write-Host "---------------------------------" -ForegroundColor White
-        Write-Host "Patching" -ForegroundColor White
-        # 4. Patching
+        Write-Host "Update Drivers" -ForegroundColor White
+        UpdateDrivers
+
+        Write-Host "---------------------------------" -ForegroundColor White
+        Write-Host "Update Windows" -ForegroundColor White
+        UpdateWindows
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "MAK Registration" -ForegroundColor White
