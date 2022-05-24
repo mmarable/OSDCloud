@@ -82,7 +82,9 @@ if ($env:UserName -eq 'defaultuser0')
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Autopilot Registration" -ForegroundColor White
         # 1. Autopilot Register (registered application)
-        # While that is running?
+        # Check to see if there is already a profile assigned
+        # If not, use the Registered Application to register
+        
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Tinme Zone Configuration" -ForegroundColor White
