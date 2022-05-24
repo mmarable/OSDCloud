@@ -35,7 +35,15 @@ Param()
 FUNCTION Add-MAK
 #----------------------------
     {
-        Start-Process -FilePath C:\Windows\System32\wscript.exe -ArgumentList 'slmgr.vbs /ipk 12345-12345-12345-12345-12345' | Out-Null
+        [CmdletBinding()]
+        param (
+            [Parameter()]
+            [Switch]$ProdKey
+        )
+
+        #Start-Process -FilePath C:\Windows\System32\wscript.exe -ArgumentList 'slmgr.vbs /ipk 12345-12345-12345-12345-12345' | Out-Null
+        Write-Host -ForegroundColor DarkGray "Product Key: $ProdKey"
+        Start-Process -FilePath C:\Windows\System32\wscript.exe -ArgumentList "slmgr.vbs /ipk $ProdKey" | Out-Null
         $ProcessId = (Get-Process -Name 'wscript').Id
         if ($ProcessId) {
             Wait-Process $ProcessId
@@ -141,7 +149,7 @@ if ($env:UserName -eq 'defaultuser0')
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "MAK Registration" -ForegroundColor White
         # MAK key (Key Vault)
-        Get-AzKeyVaultSecret -VaultName MikeMarable -Name MAKProductKey -AsPlainText
+        $(Get-AzKeyVaultSecret -VaultName MikeMarable -Name MAKProductKey -AsPlainText)
 
         Add-MAK
 
