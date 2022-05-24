@@ -89,6 +89,8 @@ if ($env:UserName -eq 'defaultuser0')
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Remove Universal Apps" -ForegroundColor White
         # 3. Remove Universal Apps
+        RemoveAppx -Name "XBox","Skype"
+        
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Patching" -ForegroundColor White
         # 4. Patching
