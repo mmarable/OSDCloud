@@ -89,7 +89,11 @@ if ($env:UserName -eq 'defaultuser0')
         Write-Host "=================================" -ForegroundColor Green
 
         Write-Host "---------------------------------" -ForegroundColor White
-        Write-Host "Tinme Zone Configuration" -ForegroundColor White
+        Write-Host "Authenticate to Azure" -ForegroundColor White
+        Connect-AzAccount
+
+        Write-Host "---------------------------------" -ForegroundColor White
+        Write-Host "Time Zone Configuration" -ForegroundColor White
         #osdcloud-StartOOBE -DateTime
         osdcloud-SetWindowsDateTime
 
@@ -136,7 +140,9 @@ if ($env:UserName -eq 'defaultuser0')
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "MAK Registration" -ForegroundColor White
-        # 5. MAK key (Key Vault)
+        # MAK key (Key Vault)
+        Get-AzKeyVaultSecret -VaultName MikeMarable -Name MAKProductKey -AsPlainText
+
         Add-MAK
 
         Write-Host "=================================" -ForegroundColor Green
