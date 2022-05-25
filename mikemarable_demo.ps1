@@ -66,7 +66,7 @@ FUNCTION Add-MAK
 
 #----------------------------
 # Initialize
-Write-Host -ForegroundColor DarkGray "OSDCloud Demo 22.5.24.16"
+Write-Host -ForegroundColor DarkGray "OSDCloud Demo 22.5.25.1"
 Invoke-Expression -Command (Invoke-RestMethod -Uri functions.osdcloud.com)
 $Transcript = "$((Get-Date).ToString('yyyy-MM-dd-HHmmss'))-OSDCloud-MikeMarable.log"
 $null = Start-Transcript -Path (Join-Path "$env:SystemRoot\Temp" $Transcript) -ErrorAction Ignore
@@ -121,6 +121,19 @@ if ($env:UserName -eq 'defaultuser0')
                 Write-Host "Autopilot profile was not found.  Need to register!" -ForegroundColor Yellow
                 #$AutopilotRegisterCommand = 'Get-WindowsAutopilotInfo -Online -GroupTag Enterprise -Assign'
                 #$AutopilotRegisterProcess = osdcloud-AutopilotRegisterCommand -Command $AutopilotRegisterCommand;Start-Sleep -Seconds 30
+
+                # OSDCloud Tenant
+                $AutopilotParams = @{
+                    Online = $true
+                    TenantId = '9bb5c0e5-f4bd-4048-b6cd-42db00a0bf3a'
+                    AppId = '185ff278-1694-4f92-85c4-446d7c039377'
+                    AppSecret = 'O.c8Q~WTmTT2B3aWtTjRolIzpBbNAOHVJ3g.ZdpX'
+                    GroupTag = 'Enterprise'
+                    Assign = $true
+                }
+                Get-WindowsAutoPilotInfo @AutopilotParams
+
+
             }
         ELSE 
             {
