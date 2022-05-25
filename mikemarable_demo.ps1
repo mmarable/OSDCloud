@@ -131,7 +131,12 @@ if ($env:UserName -eq 'defaultuser0')
                     GroupTag = 'Enterprise'
                     Assign = $true
                 }
-                Get-WindowsAutoPilotInfo @AutopilotParams
+                $Command = Get-WindowsAutoPilotInfo @AutopilotParams
+
+                Write-Host -ForegroundColor Cyan 'Registering Device in Autopilot in new PowerShell window '
+                $AutopilotProcess = Start-Process PowerShell.exe -ArgumentList "-Command $Command" -PassThru
+                Write-Host -ForegroundColor Green "(Process Id $($AutopilotProcess.Id))"
+                #Return $AutopilotProcess
 
 
             }
