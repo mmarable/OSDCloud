@@ -148,8 +148,8 @@ if ($env:UserName -eq 'defaultuser0')
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Update Windows" -ForegroundColor White
-        # Write-Host "Disabled for now to save time running" -ForegroundColor Cyan
-        UpdateWindows
+         Write-Host "Disabled for now to save time running" -ForegroundColor Cyan
+        ##UpdateWindows
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "MAK Registration" -ForegroundColor White
