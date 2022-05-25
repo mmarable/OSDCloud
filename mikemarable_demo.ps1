@@ -60,8 +60,6 @@ FUNCTION Add-MAK
 
 # =============================================================================
 # Features to Demonstrate
-
-# Other?
 # =============================================================================
 
 #----------------------------
@@ -102,14 +100,10 @@ if ($env:UserName -eq 'defaultuser0')
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Time Zone Configuration" -ForegroundColor White
-        #osdcloud-StartOOBE -DateTime
         osdcloud-SetWindowsDateTime
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Autopilot Registration" -ForegroundColor White
-        # 1. Autopilot Register (registered application)
-        # Check to see if there is already a profile assigned
-        # If not, use the Registered Application to register
         $TestAutopilotProfile = osdcloud-TestAutopilotProfile
         IF ($TestAutopilotProfile -eq $true) 
             {
@@ -119,9 +113,6 @@ if ($env:UserName -eq 'defaultuser0')
         ELSEIF ($TestAutopilotProfile -eq $false) 
             {
                 Write-Host "Autopilot profile was not found.  Need to register!" -ForegroundColor Yellow
-                #$AutopilotRegisterCommand = 'Get-WindowsAutopilotInfo -Online -GroupTag Enterprise -Assign'
-                #$AutopilotRegisterProcess = osdcloud-AutopilotRegisterCommand -Command $AutopilotRegisterCommand;Start-Sleep -Seconds 30
-
                 # OSDCloud Tenant
                 $AutopilotParams = @{
                     Online = $true
@@ -136,9 +127,6 @@ if ($env:UserName -eq 'defaultuser0')
                 Write-Host -ForegroundColor Cyan 'Registering Device in Autopilot in new PowerShell window '
                 $AutopilotProcess = Start-Process PowerShell.exe -ArgumentList "-Command $Command" -PassThru
                 Write-Host -ForegroundColor Green "(Process Id $($AutopilotProcess.Id))"
-                #Return $AutopilotProcess
-
-
             }
         ELSE 
             {
@@ -155,14 +143,13 @@ if ($env:UserName -eq 'defaultuser0')
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Update Drivers" -ForegroundColor White
-        Write-Host "Disabled for now to save time running" -ForegroundColor Cyan
-        ##UpdateDrivers
+        #Write-Host "Disabled for now to save time running" -ForegroundColor Cyan
+        UpdateDrivers
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Update Windows" -ForegroundColor White
-        # Temp disable to save time with testing
-        Write-Host "Disabled for now to save time running" -ForegroundColor Cyan
-        ##UpdateWindows
+        # Write-Host "Disabled for now to save time running" -ForegroundColor Cyan
+        UpdateWindows
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "MAK Registration" -ForegroundColor White
