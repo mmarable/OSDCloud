@@ -6,6 +6,13 @@
 #
 # 
 
+# Version: 22.7.28.1
+# Date:    27-July-2022
+# Author:  Mike Marable
+#
+# Modified to work "real world" in my tenant
+
+
 # Version:
 # Date:
 # Author:
@@ -114,12 +121,23 @@ if ($env:UserName -eq 'defaultuser0')
             {
                 Write-Host "Autopilot profile was not found.  Need to register!" -ForegroundColor Yellow
                 # OSDCloud Tenant
+                <#
                 $AutopilotParams = @{
                     Online = $true
                     TenantId = '9bb5c0e5-f4bd-4048-b6cd-42db00a0bf3a'
                     AppId = '185ff278-1694-4f92-85c4-446d7c039377'
                     AppSecret = 'O.c8Q~WTmTT2B3aWtTjRolIzpBbNAOHVJ3g.ZdpX'
                     GroupTag = 'Enterprise'
+                    Assign = $true
+                }
+                #>
+                # Mike Marable Tenant
+                $AutopilotParams = @{
+                    Online = $true
+                    TenantId = '0d6ed6ff-60a1-4940-8d9b-054be8d92114'
+                    AppId = 'b99a064e-7379-46aa-a4f5-a3eda915598e'
+                    AppSecret = 'fy-8Q~zoNBE4i9NO_Yub4FdZwyb2lvnLONHiEbLp' # Good until 28-July-2024
+                    GroupTag = 'Mike'
                     Assign = $true
                 }
                 $Command = Get-WindowsAutoPilotInfo @AutopilotParams
@@ -149,12 +167,12 @@ if ($env:UserName -eq 'defaultuser0')
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "Update Windows" -ForegroundColor White
          Write-Host "Disabled for now to save time running" -ForegroundColor Cyan
-        ##UpdateWindows
+        UpdateWindows
 
         Write-Host "---------------------------------" -ForegroundColor White
         Write-Host "MAK Registration" -ForegroundColor White
         # MAK key (Key Vault)
-        Add-MAK -ProdKey $(Get-AzKeyVaultSecret -VaultName MikeMarable -Name MAKProductKey -AsPlainText)
+        ##Add-MAK -ProdKey $(Get-AzKeyVaultSecret -VaultName MikeMarable -Name MAKProductKey -AsPlainText)
 
         Write-Host "=================================" -ForegroundColor Green
         Write-Host "Finished OSDCloud - OOBE Phase" -ForegroundColor Green
